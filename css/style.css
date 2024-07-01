@@ -1,0 +1,454 @@
+/* GENERALES */
+
+*{
+    box-sizing: border-box; /* tamaño de caja será ancho fijo, solo se haran espacio hacia adentro, y no aumentar el 100% del tamaño */
+}
+
+body{
+    font-family: "Roboto";
+    font-size: 13px;
+}
+
+a{
+    display: inline-block;/* tal vez modifiquemos su altura del elemento */
+    text-decoration: none;
+}
+
+p{
+    color: black;
+}
+
+header{
+    padding: 5px 0;
+    position: fixed; /* efecto FIJA que persigue el MENU */
+    top: 0; 
+    left: 0;
+    z-index: 2; /* para que se ubique SI O SI ENCIMA DE TODO, sino no aparecerá */
+    background-color: white;
+    width: 100%; /* para que ocupe todo el espacio, ya que por defecto no lo hace fixed */
+}
+
+header .container{ /* se lee: AL CONTAINER QUE ESTA DENTRO DE HEADER */
+    display:flex ; /* acomodan a los elemntos hijos que estan dentro */    
+    justify-content: space-between; /* se acomodan entre el espacio disponible, si hay 2 se irá uno izquierda y otro derecha. */
+    align-items: center;
+}
+
+header .container .logo{
+    width: 100px;
+}
+
+header .container nav a{
+    color: red;
+    text-decoration: none;
+    margin: 0 15px
+}
+
+header .container .hamb{
+    display: none;
+    position: relative;    
+}
+
+footer.seccion{
+    background-color: black;
+    color: white;
+    padding-bottom: 0;
+}
+
+footer .barra-footer{
+    background-color: grey;
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer .logo-footer{
+    width: 100%;
+}
+
+footer ul{
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+footer li{
+    margin-bottom: 5px;
+}
+
+footer p{
+    color: white;
+    margin-bottom: 30px;
+}
+
+footer a{
+    color: white;
+}
+
+footer .redes{
+    font-size: 30px;
+    display: flex; /* iconos uno al lado de otro 
+    */
+}
+
+footer .redes a{
+    margin: 0 7.5px;
+}
+
+.boton{
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 20px;
+    border: none;
+}
+
+.boton.boton-rojo{/* sin espacios en blanco para afectar las propiedades a ambas clases */
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;/* negrita */
+}
+
+.boton.boton-blanco{
+    background-color: white;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid red;
+}
+
+.boton.boton-negro{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.boton.boton-negro:hover{
+    background-color: white;
+    color: black;
+}
+
+.seccion{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.cuadrado-perfecto{
+    width: 100%;
+    padding-bottom: 100%;/* altura del cuadrado. Explicado en video 4 */
+    position: relative;
+}
+
+.cuadrado-perfecto img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/* cubrir todo el espacio disponible*/
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container{
+    width: 1140px;
+    margin : 0 auto 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.container-fluid{ /* para que las 6 imagenes no estas tan pegadas al filo */
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.row{
+    display: flex; /* flexible para mover sus hijos, en este caso sus columnas */
+    flex-wrap: wrap;/* si una columna no alcanza a lo ancho, entonces bajara */
+    margin-left: -15px; /* para alinearse con los elementos del nav-por ejemplo por la izquierda con el logo */
+    margin-right: -15px;
+}
+
+.columna{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.columna-33{
+    width: 33.33%;/* solo 3 columnas */
+}
+
+.columna-25{
+    width: 25%;/* solo 4 columnas */
+}
+
+.columna-41{
+    width: 41.66%;
+}
+
+.columna-50{
+    width: 50%;
+}
+
+.empujar-50{
+    margin-left: 50%;
+}
+
+.empujar-58{
+    margin-left: 58.33%;
+}
+
+.empujar-0{
+    margin-left: 0;
+}
+
+/* FIN CLASES */
+
+/* Tipo ID */
+#inicio{
+    position: relative; /* Todos los elementos tienen por defecto la position "statatica", pero en este se cambiará a relative */
+}
+
+#inicio img{
+    width: 100%;
+    display: block; /* tipo bloque para que la imagene no genere espacios a los costados, porque recuerda que block ocupa todo el ancho*/
+}
+
+#inicio .bloque-inicio{
+    position: absolute; /* para que se coloque encima de un elemento con posicion relative*/
+    top: 40%;
+    left: 50%;
+    width: 400px;
+    text-align: center;
+    margin-left: -200px;
+}
+
+#inicio .bloque-inicio h1{ /* Se lee: H1 QUE ESTÁ DENTRO DE BLOQUE-INICIO QUE ESTÁ DENTRO DE INICIO */
+    color: white;
+    font-size: 35px;
+}
+
+#inicio .bloque-inicio p{
+    color: white;
+    font-size: 16px;
+}
+
+#nosotros{
+    background-image: url(../img/fondito.jpg);
+    background-size: cover;/* cubre extiende la imagen a todo el espacio disponible */
+}
+
+#nosotros p{
+    color: red;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#servicios .bloque-servicio{
+    border: 1px solid grey;
+}
+
+#servicios .bloque-servicio .bloque-img-servicio img{
+    width: 100%;
+}
+
+#servicios .bloque-servicio .bloque-contenido-servicio{
+    padding: 15px;
+} 
+
+#servicios .bloque-servicio .bloque-contenido-servicio h3{
+    margin-top: 0;
+    font-size: 25px;
+}
+
+#servicios .bloque-servicio .bloque-img-servicio.cuadrado-perfecto{
+    padding-bottom: 56.25%;/* si quieres que sea las imagenes cuadradas pefectas en servicios 1 2 3, elimina esta linea */
+}
+
+#galeria h4{
+    padding-right: 15px;
+    padding-left: 15px;
+    position: absolute;
+    top: 40%;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;/* va junto con text-align para que pueda centrarse */
+}
+
+#galeria img{
+    filter: grayscale(1);/* escala de grises imagenes */
+}
+
+#galeria .cuadrado-perfecto:hover img{
+    filter: grayscale(0); /* retira la escala de grises al enfocar la imagen */
+}
+
+#galeria .cuadrado-perfecto:hover h4{
+    display: none;/* al enfocarse en texto de h4 se ocultara */
+}
+
+#contactenos{
+    position: relative;
+}
+
+#contactenos iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;/* el alto del mapa le da el formulario por estar iframe dentro de el */
+    /* filter: grayscale(1); *//* opcional escala de grises */
+}
+
+#contactenos form{
+    padding: 60px;/* margen 60px a todos lados */
+    background-color: red;
+}
+
+#contactenos form .form-block{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#contactenos form .form-block .form-control{
+    display: block;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid grey;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+#contactenos form .form-block textarea{
+    display: block;
+    height: 100px;
+    font-size: 16px;
+    border: 1px solid grey;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+#contactenos form .form-block.bloque-ultimo{
+    margin: bottom 0; ;
+}
+
+/* FIN Tipo ID */
+
+/* RESPONSIVE CELULAR */
+
+@media(max-width:767px){ /* funcionará solo hasta dispositivos como máximo 767px, 768 es para tablet */
+
+    body{
+        font-size: 15px;
+    }
+
+    header .container nav{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        padding-top: 80px;
+        padding-bottom: 80px ;
+        padding-right: 15px;
+        padding-left: 15px;
+        top: 0;
+        left: 0;
+        display: flex;/* para que items esten uno encima del otro */
+        flex-direction: column;/* para que items esten uno encima del otro */
+        transition: all 0.4s ease;/* cambiar acciones de un estado a otro (investigar) */
+        transform: translateX(100%);
+    }
+
+    header .container nav.open{
+        transform: translateX(0);
+    }
+
+    header .container nav a{
+        font-size: 30px;
+        margin: 15px 0;
+    }
+
+    header .container .hamb{
+        display: block;
+        font-size: 40px;
+        color: red;
+    }
+
+    form .boton.boton-negro{
+        width: 100%;
+    }
+
+    footer{
+        text-align: center;
+    }
+
+    footer .logo-footer{
+        width: 50%;
+    }
+
+    footer .redes{
+       justify-content: center;
+    }
+
+    .container{
+        width: 100%;
+    }
+
+    .columna-mobile-100{
+         width: 100%;
+    }
+
+    .columna-mobile-50{
+        width: 50%;
+    }
+
+    .empujar-mobile-0{
+        margin-left: 0;
+    }
+
+    .sinpadding-mobile{
+        padding: 0;
+    }
+
+    #inicio{
+        height: 100vh; /* vh es alto del dispositivo */
+    }
+
+    #inicio img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    #servicios .bloque-servicio{
+        margin-bottom: 15px;
+    }
+
+    #contactenos{
+        padding: 0;
+    }
+
+    #contactenos iframe{
+        position: relative;
+        height: 50vh;
+    }
+
+
+
+}
+
+
+
+
+/* conceptos
+Position RELATIVE, ABSOLUTE, permite mover el elemento con top, righ, left, bottom, z index.
+Se puede mover el elemento. EN RELATIVE su espacio ocupado de origen no se elimina, siempre ocupará su espacio. En cambio en ABSOLUTE si se elimina su espacio, el elemento quedará "flotando"
+Todo esta funcionará bien solo si está dentro de un elemento RELATIVE O ABSOLUTE
+ */
